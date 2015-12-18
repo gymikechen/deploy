@@ -1,8 +1,16 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.4.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'deploy'
+set :repo_url, 'git@github.com:gymikechen/deploy.git'
+set :deploy_to, '/home/deploy/deploy'
+set :keep_releases, 5
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.2.0'
+set :rbenv_path, '$HOME/.rbenv'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }

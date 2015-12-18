@@ -23,10 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'capistrano-rails'
-gem 'capistrano-rails'
-gem 'capistrano-passenger'
-
+gem 'capistrano', '~> 3.4'
+gem 'capistrano-rails', '~> 1.1.3'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+gem 'capistrano-passenger', require: false, github: 'capistrano/passenger'
+gem "net-ssh", "~> 3.0.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
